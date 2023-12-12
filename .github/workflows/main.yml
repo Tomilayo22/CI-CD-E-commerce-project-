@@ -16,7 +16,7 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.x  # Specify your desired Python version
+        python-version: 3.1  
 
     - name: Install dependencies
       run: |
@@ -24,25 +24,23 @@ jobs:
 
     - name: Linting
       run: |
-       flake8 src/ Integration_tests/
+        flake8 src/ Integration_tests/
 
-    - - name: Build and Test
-  run: |
-    python Test project.py  
-    python -main project automated test suite.py /  
-
+    - name: Build and Test
+      run: |
+        python Test project.py  
+        python main project automated test suite.py
 
     - name: Deploy
       run: |
         # deploy.sh
-  
 
     - name: Notify on Success
       if: success()
       run: |
-#"Build and deployment succeeded! Notify stakeholders."
+        # "Build and deployment succeeded! Notify stakeholders."
 
     - name: Notify on Failure
       if: failure()
       run: |
-        #  "Build failed! Notify stakeholders."
+        # "Build failed! Notify stakeholders."
