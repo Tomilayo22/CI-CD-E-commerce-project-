@@ -3,10 +3,10 @@ name: CI/CD
 on:
   push:
     branches:
-      - main  #
+      - main
 
 jobs:
-  build:
+  build_and_test:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,31 +16,24 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: 3.1  
+        python-version: 3.x
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt  # Replace with your dependency installation command
+        pip install -r requirements.txt
 
     - name: Linting
-      run: |
-        flake8 src/ Integration_tests/
+      run: flake8 src/ Integration_tests/
 
     - name: Build and Test
       run: |
-        python Test project.py  
-        python main project automated test suite.py
-
-    - name: Deploy
-      run: |
-        # deploy.sh
+        python -m unittest discover -s tests/
+        python main_project.py
 
     - name: Notify on Success
       if: success()
-      run: |
-        # "Build and deployment succeeded! Notify stakeholders."
+      run: echo "Build and test succeeded! Notify stakeholders."
 
     - name: Notify on Failure
       if: failure()
-      run: |
-        # "Build failed! Notify stakeholders."
+      run: echo "Build or test failed! Notify stakeholders."
