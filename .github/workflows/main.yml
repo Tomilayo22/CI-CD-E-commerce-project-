@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - main  # Change this to your main branch name
+      - main  #
 
 jobs:
   build:
@@ -22,20 +22,27 @@ jobs:
       run: |
         pip install -r requirements.txt  # Replace with your dependency installation command
 
-    - name: Build and Test
-      run: python build.py  # Adjust this to your build and test script
+    - name: Linting
+      run: |
+       flake8 src/ Integration_tests/
+
+    - - name: Build and Test
+  run: |
+    python Test project.py  
+    python -main project automated test suite.py /  
+
 
     - name: Deploy
       run: |
-        # Deploy your application here (if applicable)
-        # Notify stakeholders
+        # deploy.sh
+  
 
     - name: Notify on Success
       if: success()
       run: |
-        # Send notifications on successful build and deployment
+#"Build and deployment succeeded! Notify stakeholders."
 
     - name: Notify on Failure
       if: failure()
       run: |
-        # Send notifications on build failure
+        #  "Build failed! Notify stakeholders."
