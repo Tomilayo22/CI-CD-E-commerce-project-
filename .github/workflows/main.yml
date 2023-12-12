@@ -28,17 +28,9 @@ jobs:
 
     - name: Linting
       run: |
-        flake8 src/ Integration_tests/
+        flake8 Integration_tests.py "Main project automated test suite.py" Test\ project.py
 
     - name: Build and Test
       run: |
         python -m unittest discover -s tests/
-        python main_project.py
 
-    - name: Notify on Success
-      if: success()
-      run: echo "Build and test succeeded! Notify stakeholders."
-
-    - name: Notify on Failure
-      if: failure()
-      run: echo "Build or test failed! Notify stakeholders."
