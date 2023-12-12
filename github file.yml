@@ -1,0 +1,41 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main  # Change this to your main branch name
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x  # Specify your desired Python version
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Replace with your dependency installation command
+
+    - name: Build and Test
+      run: python build.py  # Adjust this to your build and test script
+
+    - name: Deploy
+      run: |
+        # Deploy your application here (if applicable)
+        # Notify stakeholders
+
+    - name: Notify on Success
+      if: success()
+      run: |
+        # Send notifications on successful build and deployment
+
+    - name: Notify on Failure
+      if: failure()
+      run: |
+        # Send notifications on build failure
