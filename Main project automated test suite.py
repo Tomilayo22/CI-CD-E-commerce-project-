@@ -5,9 +5,9 @@ import unittest
 class MyTestSuite(unittest.TestCase):
   
     def test_case_1(self):
-    """
-    Description: Test if True is equal to True.
-    """
+        """
+        Description: Test if True is equal to True.
+        """
         self.assertTrue(True)
 
     def test_case_2(self):
