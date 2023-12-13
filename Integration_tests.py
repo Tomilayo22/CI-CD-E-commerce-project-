@@ -11,6 +11,7 @@ class MyTestSuite(unittest.TestCase):
         """
         self.assertTrue(True)
 
+    
     def test_case_2(self):
         """
         Description: Test if the sum of 1 and 1 is equal to 2.
