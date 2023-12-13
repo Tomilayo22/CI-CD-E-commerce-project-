@@ -1,42 +1,5 @@
-# Define your e-commerce components
-
-class ShoppingCart:
-    def __init__(self):
-        self.items = {}
-
-    def add_item(self, product_id, quantity):
-        if product_id in self.items:
-            self.items[product_id] += quantity
-        else:
-            self.items[product_id] = quantity
-
-    def remove_item(self, product_id, quantity):
-        if product_id in self.items:
-            if self.items[product_id] >= quantity:
-                self.items[product_id] -= quantity
-            else:
-                del self.items[product_id]
-
-    def get_cart_total(self):
-        total = 0
-        # Calculate the total cost based on the items and their prices
-        return total
-
-class ProductCatalog:
-    def __init__(self):
-        self.products = {}
-
-    def add_product(self, product_id, name, price):
-        self.products[product_id] = {"name": name, "price": price}
-
-    def get_product_info(self, product_id):
-        if product_id in self.products:
-            return self.products[product_id]
-        else:
-            return None
-
 # Now, let's write unit tests for these components
-import unittest
+import unittest  
 
 class TestECommerceComponents(unittest.TestCase):
     def setUp(self):
