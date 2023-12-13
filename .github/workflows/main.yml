@@ -28,9 +28,8 @@ jobs:
 
     - name: Linting
       run: |
-        flake8 Integration_tests.py "Main project automated test suite.py" Test\ project.py
+        flake8 Integration_tests.py "Main project automated test suite.py" "Test project.py"
 
     - name: Build and Test
       run: |
         python -m unittest discover -s tests/
-
