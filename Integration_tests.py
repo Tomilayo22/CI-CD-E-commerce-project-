@@ -1,7 +1,9 @@
 import unittest
 
+
 # Define Test Classes
 class MyTestSuite(unittest.TestCase):
+
     def test_case_1(self):
         """
         Description: Test if True is equal to True.
