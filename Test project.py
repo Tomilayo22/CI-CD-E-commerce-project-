@@ -1,5 +1,9 @@
 # Now, let's write unit tests for these components
-import unittest  
+import unittest
+
+# Import the ShoppingCart and ProductCatalog classes from your source code
+from your_source_code_file import ShoppingCart, ProductCatalog
+
 
 class TestECommerceComponents(unittest.TestCase):
     def setUp(self):
@@ -22,6 +26,7 @@ class TestECommerceComponents(unittest.TestCase):
         self.shopping_cart.add_item("product4", 1)
         total = self.shopping_cart.get_cart_total()
         self.assertEqual(total, 35.0)
+
 
 if __name__ == '__main__':
     unittest.main()
