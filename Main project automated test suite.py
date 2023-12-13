@@ -2,6 +2,7 @@ import unittest
 
 # Define Test Classes
 class MyTestSuite(unittest.TestCase):
+
     def test_case_1(self):
         """
         Description: Test if True is equal to True.
@@ -18,4 +19,3 @@ class MyTestSuite(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-
