@@ -23,6 +23,7 @@ class ShoppingCart:
         return total
 
 class ProductCatalog:
+    
     def __init__(self):
         self.products = {}
 
@@ -36,8 +37,7 @@ class ProductCatalog:
             return None
 
 # Now, let's write unit tests for these components
-
-import unittest
+import unittest  
 
 class TestECommerceComponents(unittest.TestCase):
     def setUp(self):
